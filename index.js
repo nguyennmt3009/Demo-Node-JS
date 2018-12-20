@@ -1,7 +1,7 @@
-var express = require('express');
-var app = express();
+const express = require('express');
+const app = express();
 
-var express_graphql = require('express-graphql');
+const express_graphql = require('express-graphql');
 
 const {schema, rootValue} = require('./database/schema')
 

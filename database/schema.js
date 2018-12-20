@@ -3,7 +3,13 @@ var {buildSchema} = require('graphql');
 const schema = buildSchema(`
 type Query {
     allUser : [User],
-    login(username: String, password: String) : User
+    login(username: String, password: String) : User,
+    get(id: Int!) : User,
+    find(fullname: String) : [User]
+}
+
+type Mutation {
+    update(id: Int!, )
 }
 
 type User {
@@ -16,7 +22,9 @@ type User {
 
 const rootValue = {
     allUser: () => UserData,
-    login: (args) => UserData.find(user => user.username === args.username && user.password === args.password)
+    login: (args) => UserData.find(user => user.username === args.username && user.password === args.password),
+    get: (args) => UserData.find(u => u.id === args.id),
+    find: (args) => UserData.filter(u => u.fullname.includes(args.fullname))
     
 }
 
@@ -41,7 +49,7 @@ var UserData = [
     {
         id: 3,
         fullname: 'Clibaba',
-        username: 'Clibaba',
+        username: 'clibaba',
         password: '123456'
     },
     {
