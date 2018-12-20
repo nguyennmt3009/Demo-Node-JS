@@ -7,6 +7,7 @@ a.	What?
 Example: http://latentflip.com/loupe
 
 https://www.youtube.com/watch?v=8aGhZQkoFbQ
+
 2.	Async and Sync
 -	Node-fetch
 https://www.youtube.com/watch?v=568g8hxJJp4
